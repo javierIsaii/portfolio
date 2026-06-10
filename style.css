@@ -93,7 +93,6 @@ p {
   filter: drop-shadow(0px 0px 15px rgb(255 255 255 / 50%));
 }
 
-
 .air{
   position: absolute;
   top: 90vh;
@@ -146,6 +145,128 @@ section .air.air4{
   }
   100%{
     background-position-x: -1000px; 
+  }
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+#splash-screen {
+  align-items: center;
+  background-color: var(--background-color-primary);
+  color: var(--text-color-primary);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.5s ease-in-out;
+  width: 100vw;
+  z-index: 11100;
+}
+
+#splash-screen .icono {
+  align-items: center;
+  background-image: url();
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90px;
+  filter: invert(1);
+  height: 95px;
+  justify-content: center;
+  text-align: center;
+  transition: opacity 0.8s;
+  width: 95px;
+}
+
+#splash-text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: sofiaSans;
+  justify-content: center;
+  text-align: center;
+}
+
+.nota {
+  color: orange;
+  font-size: 1em;
+  margin-top: 20px;
+  opacity: 0;
+  position: absolute;
+  top: 20%;
+  transition: 0.1s ease-in-out;
+}
+
+#error-message {
+  color: var(--text-color-primary);
+  font-size: 16px;
+  left: 50%;
+  opacity: 0;
+  padding: 8px;
+  position: fixed;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out;
+  width: 270px;
+}
+
+#splash-text img {
+  height: auto;
+  max-width: 90%;
+}
+
+#barra-de-carga {
+  background-color: #333;
+  height: 3px;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.4s ease-in-out;
+  width: 100%;
+  z-index: 99999;
+}
+
+#progreso {
+  background-color: blue;
+  height: 100%;
+  opacity: 1;
+  transition: width 0.3s, opacity 0.4s ease-in-out;
+  width: 0;
+}
+
+#progresoCache {
+  background-color: #00e917;
+  height: 100%;
+  opacity: 1;
+  transition: width 0.3s ease-in-out, opacity 0.4s ease-in-out;
+  width: 0;
+}
+
+.loader {
+  animation: spin 0.5s linear infinite;
+  border: 12px solid transparent;
+  border-bottom: 12px solid rgb(255, 153, 0);
+  border-radius: 50%;
+  border-top: 12px solid blue;
+  height: 35px;
+  opacity: 0;
+  position: fixed;
+  top: 50%;
+  transition: 0.5s ease-in-out;
+  width: 35px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
