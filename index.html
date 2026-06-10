@@ -19,11 +19,27 @@
         <meta name="theme-color" content="#00004f" />
         <!-- Only supported on: Google Chrome for Android (light mode) // Safari on mobile and desktop // Samsung Internet -->
         <link rel="shortcut icon" type="image/x-icon" href="images/favIcon.png" />
-        <link rel="stylesheet" href="style.css?v=1.4" />
-        <link rel="preload" href="style.css" as="style" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preload" href="style.css?v=1.6" as="style" />
         <title>LoopState</title>
     </head>
     <body>
+        <div id="barra-de-carga">
+        <div id="progreso"></div>
+        <div id="progresoCache"></div>
+    </div>
+
+        <div id="splash-screen">
+        <div id="splash-text">
+            <div class="icono"></div>
+            <h4 class="nota"></h4>
+            <h4 id="error-message">
+                Cierra o recarga la página si tarda en cargar. <br> <strong style="color: rgb(96, 149, 255);">o
+                    solo espera...</strong>
+            </h4>
+        </div>
+        <div class="loader"></div>
+    </div>
         <header>
             <div class="menu">
                 <a href="https://javierisaii.site" class="logo" title="Inicio">
@@ -336,6 +352,7 @@
         })
     );
 </script>
+<script src="splashScreen.js"></script>
     </body>
     
 </html>
