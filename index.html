@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description"
+            content="Plataforma web de visuales interactivos basada en música, animación y experiencias de realidad aumentada." />
+        <meta property="og:title" content="LoopState — by JavierIsaii" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description"
+            content="Plataforma web de visuales interactivos basada en música, animación y experiencias de realidad aumentada." />
+        <meta property="og:image" content="/images/banner.webp">
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="LoopState — by JavierIsaii" />
+        <meta name="twitter:description"
+            content="Plataforma web de visuales interactivos basada en música, animación y experiencias de realidad aumentada." />
+        <meta name="twitter:image" content="/images/banner.webp" />
+        <meta name="theme-color" content="#00004f" />
+        <!-- Only supported on: Google Chrome for Android (light mode) // Safari on mobile and desktop // Samsung Internet -->
+        <link rel="shortcut icon" type="image/x-icon" href="images/favIcon.png" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preload" href="style.css" as="style" />
+        <title>LoopState</title>
+    </head>
+    <body>
+        <header>
+            <div class="menu">
+                <a href="https://javierisaii.site" class="logo" title="Inicio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80"
+                        height="80"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 390.86 184.38">
+                        <path
+                            d="M358.84,127.65c-10.03-12.75-30.24-28.22-42.39-34.45-10.43-5.36-21-7.85-44.86-13.67-31.28-7.64-67.78-13.95-67.78-13.95l-11.72-2.04s-17.11-8.25-48.28-9.17c-21.22-1.16-40.32,10.94-40.32,10.94,0,0-1.41-1.33-5.87-1.73-4.46-.39-6.3,1.48-6.3,1.48,0,0-8.26-11.15-43.4-11.31-7.87-.12-13.62,1.47-14.35,2.97-.74,1.51-2.51,11.51-2.06,13.29.45,1.79,4.33,4.99,4.08,10.42-.33,7.52-1.87,18.87-.8,25.04,1.88,11.39,7.96,20.52,12.94,23.42.46.27.95.53,1.44.77,4.83,2.4,11.21,3.48,19.82-.39,16.61-7.49,21.17-24.41,22.36-38.05.34-2.19,1.32-12.84,1.32-12.84,5.36-1.13,9.89.21,9.89.21.97,5.54,1.49,9.62,2.46,15.85.97,6.25,5.34,47.27,44.61,46.89,34.83-1.58,42.29-49.96,42.29-49.96,0,0,.98-8.36,8.68-6.86,1.99.39,20.9,5.43,40.21,11.22,22.1,6.63,36.43,10.13,44.58,10.75,4.44.33,10.93,1.6,17.26.46,4.79-.86,9.81.03,13.95,2.59,12.69,7.85,35.1,23.02,39.18,22.45,1.99-.28,4.92-1.9,3.07-4.32ZM36.71,65.34c-2.41-.21-4.3-1.21-4.22-2.25.09-1.04,2.12-1.71,4.53-1.51,2.41.2,4.3,1.2,4.21,2.24-.09,1.04-2.11,1.71-4.53,1.51ZM184.94,75.64c-5.06-.54-9.03-2.21-8.87-3.73.16-1.52,4.39-2.31,9.46-1.77,5.05.54,9.03,2.21,8.86,3.72-.16,1.52-4.39,2.32-9.45,1.78Z" />
+                    </svg>
+                </a>
+            </div>
+            <script>
+                var menu = document.querySelector(".menu");
+                var scrollOffset = 200;
+
+                window.addEventListener("scroll", function () {
+                    if (window.scrollY > scrollOffset) {
+                        menu.style.cssText = "backdrop-filter: saturate(180%) blur(20px) brightness(170%); -webkit-backdrop-filter: saturate(180%) blur(20px); background-color: rgba(0, 0, 0, 0.7); background-image: linear-gradient(transparent,transparent);";
+                    } else {
+                        menu.style.cssText = "background-color: transparent";
+                    }
+                });
+            </script>
+        </header>
+
+        <div class="bodyContainer">
+            <div id="cuerpo"></div>
+
+            <section id="inicio">
+                <div class="inicio-container">
+                    <span class="sloganContainer">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 422.69 131.93" class="iconLoop">
+                            <g>
+                                <g>
+                                    <path class="cls-1"
+                                        d="M255.05,32.55c-3.18-1.59-6.76-2.38-10.73-2.38-5.79,0-10.59,1.55-14.39,4.64-3.81,3.1-5.71,7.28-5.71,12.56,0,7.44,4.49,12.89,13.46,16.35l1.96.77c1.82.8,3.19,1.43,4.13,1.92.94.48,1.96,1.18,3.07,2.09,1.11.91,1.9,1.95,2.38,3.11.48,1.16.72,2.54.72,4.13,0,3.58-1.29,6.47-3.88,8.69-2.58,2.21-6.06,3.32-10.43,3.32-6.64,0-11.67-2.61-15.08-7.84l-5.28,3.75c4.66,6.93,11.44,10.39,20.36,10.39,6.25,0,11.41-1.72,15.5-5.15,4.09-3.44,6.13-7.96,6.13-13.59,0-2.5-.38-4.68-1.15-6.56s-1.95-3.46-3.53-4.77c-1.59-1.31-3.08-2.34-4.47-3.11-1.39-.77-3.19-1.6-5.41-2.51l-1.96-.77c-3.35-1.42-5.72-2.91-7.11-4.47-1.39-1.56-2.09-3.56-2.09-6,0-3.12,1.16-5.68,3.49-7.67,2.33-1.99,5.42-2.98,9.28-2.98,2.84,0,5.48.61,7.92,1.83,2.44,1.22,4.29,2.8,5.54,4.73l4.85-4c-1.87-2.73-4.4-4.88-7.58-6.47Z" />
+                                    <path class="cls-1"
+                                        d="M285.11,36.81l-7.24,1.45-2.13,12.01h-7.5l-1.02,5.88h7.41l-4,22.4c-.34,2.1-.51,3.8-.51,5.11,0,3.41.82,5.99,2.47,7.75,1.65,1.76,4.03,2.64,7.15,2.64,2.95,0,6.22-.71,9.79-2.13l-.77-5.96c-2.9,1.42-5.31,2.13-7.24,2.13-2.9,0-4.34-1.73-4.34-5.2,0-1.08.11-2.1.34-3.07l4.17-23.68h12.61l1.02-5.88h-12.61l2.39-13.46Z" />
+                                    <path class="cls-1"
+                                        d="M334.19,58.44c-1.02-2.78-2.74-4.98-5.15-6.6-2.41-1.62-5.3-2.43-8.65-2.43-6.19,0-11.16,2.61-14.91,7.84-3.75,5.22-5.62,11.58-5.62,19.08,0,5.79,1.36,10.19,4.09,13.2,2.73,3.01,6.44,4.51,11.16,4.51,6.13,0,11.07-2.84,14.82-8.52-.06.51-.08,1.28-.08,2.3,0,1.87.11,3.75.34,5.62l6.39-.68c-.11-2.61-.17-4.23-.17-4.85,0-2.84.37-6.36,1.11-10.56l4.77-27.09h-6.56l-1.53,8.18ZM328.06,81.95c-2.61,4.09-6.3,6.13-11.07,6.13-3.24,0-5.74-1.05-7.5-3.15-1.76-2.1-2.64-5.11-2.64-9.03,0-5.62,1.33-10.45,4-14.48,2.67-4.03,6.27-6.05,10.82-6.05,3.24,0,5.76,1.06,7.58,3.19,1.82,2.13,2.73,5.15,2.73,9.07,0,5.45-1.31,10.22-3.92,14.31Z" />
+                                    <path class="cls-1"
+                                        d="M369.66,36.81l-7.24,1.45-2.13,12.01h-7.5l-1.02,5.88h7.41l-4,22.4c-.34,2.1-.51,3.8-.51,5.11,0,3.41.82,5.99,2.47,7.75,1.65,1.76,4.03,2.64,7.15,2.64,2.95,0,6.22-.71,9.79-2.13l-.77-5.96c-2.9,1.42-5.31,2.13-7.24,2.13-2.9,0-4.34-1.73-4.34-5.2,0-1.08.11-2.1.34-3.07l4.17-23.68h12.61l1.02-5.88h-12.61l2.39-13.46Z" />
+                                    <path class="cls-1"
+                                        d="M401.65,88.51c-3.41,0-6.05-1.09-7.92-3.28-1.87-2.19-2.81-5.24-2.81-9.16v-.09c10.85-.74,18.85-2.27,24.02-4.6,5.17-2.33,7.75-5.79,7.75-10.39,0-3.58-1.42-6.4-4.26-8.48-2.84-2.07-6.47-3.11-10.9-3.11-7.38,0-13.12,2.54-17.21,7.62-4.09,5.08-6.13,11.4-6.13,18.95,0,5.57,1.55,9.97,4.64,13.2,3.09,3.24,7.25,4.85,12.48,4.85,7.44,0,13.71-3.44,18.82-10.31l-5.45-2.56c-3.75,4.88-8.09,7.33-13.03,7.33ZM396.58,59.38c2.75-2.95,6.32-4.43,10.69-4.43,2.61,0,4.7.54,6.26,1.62,1.56,1.08,2.34,2.61,2.34,4.6,0,2.78-1.92,4.87-5.75,6.26-3.83,1.39-10.09,2.46-18.78,3.19.74-4.54,2.48-8.29,5.24-11.24Z" />
+                                    <path class="cls-1"
+                                        d="M49.26,92.4c-.49-.39-1.21-.46-2.18-.22-.97.24-2.52.65-4.64,1.23-.58.19-1.4.41-2.47.65-1.06.24-2.18.46-3.34.65-1.26.29-2.59.61-3.99.94-1.4.34-2.73.61-3.99.8h.15c-2.13.39-3.8.65-5,.8-1.21.15-2.2.17-2.97.07-.68,0-1.4-.12-2.18-.36-.77-.24-1.69-.56-2.76-.94-2.13-.87-3.94-1.96-5.44-3.26-1.5-1.31-2.35-2.78-2.54-4.42-.1-1.26-.02-3.02.22-5.29.24-2.27.65-4.64,1.23-7.11.58-2.47,1.21-4.57,1.89-6.31,0-.77.05-1.57.15-2.39.1-.82.39-1.43.87-1.81.29-.68.48-1.28.58-1.81.1-.53.24-.75.44-.65.19-1.35.58-2.37,1.16-3.05.97-2.71,1.93-5.29,2.9-7.76.97-2.47,2.18-5.2,3.63-8.2.1-.19.19-.39.29-.58.1-.19.19-.44.29-.73,2.13-4.16,3.82-7.64,5.08-10.44,1.16-2.03,2.54-4.33,4.13-6.89,1.6-2.56,3.24-5.05,4.93-7.47,1.69-2.42,3.21-4.52,4.57-6.31,1.35-1.79,2.37-2.88,3.05-3.26.39-.1.6-.51.65-1.23.05-.73-.07-1.57-.36-2.54-.29-.97-.78-1.79-1.45-2.47C40.7.59,39.49-.09,38.53,0c-.97.1-2.27,1.07-3.92,2.9-1.26,1.16-2.73,2.93-4.42,5.29-1.69,2.37-3.46,5.03-5.29,7.98-1.84,2.95-3.55,5.9-5.15,8.85-1.6,2.95-2.93,5.58-3.99,7.91-.48,1.06-.92,2.15-1.31,3.26-.39,1.11-.63,1.91-.73,2.39-.68,1.07-1.21,2.08-1.6,3.05v.29c-.29.39-.7,1.21-1.23,2.47-.53,1.26-1.09,2.64-1.67,4.13-.58,1.5-1.09,2.88-1.52,4.13-.44,1.26-.65,2.03-.65,2.32-.68,1.26-1.11,1.98-1.31,2.18-.29.39-.58.92-.87,1.6-.29.68-.39,1.21-.29,1.6.09,1.16-.15,2.03-.73,2.61-.39.39-.87,1.21-1.45,2.47.1.39.15.94.15,1.67s-.24,1.67-.73,2.83c-.29.97-.56,1.91-.8,2.83-.24.92-.31,1.57-.22,1.96,0,.97-.15,1.55-.44,1.74-.19.29-.31,1.31-.36,3.05-.05,1.74,0,3.63.15,5.66.15,2.03.27,3.68.36,4.93.87,3.1,2.83,6.09,5.87,8.99s6.5,4.83,10.37,5.8c1.55.48,3.55.73,6.02.73s5.03-.24,7.69-.73c2.66-.48,4.95-1.16,6.89-2.03,1.84-.58,3.7-1.31,5.58-2.18,1.89-.87,3.5-1.76,4.86-2.68,1.35-.92,2.13-1.62,2.32-2.1.29-.87.34-1.57.15-2.1-.19-.53-.53-.99-1.02-1.38Z" />
+                                    <path class="cls-1"
+                                        d="M105.24,58.64c-.42,0-.78-.17-1.1-.51-.31-.34-.47-.7-.47-1.09,0-.68-.89-1.26-2.66-1.74-1.25-.19-2.04-.29-2.35-.29s-.78.15-1.41.44c-.63.49-1.91.94-3.83,1.38-1.93.44-3.83.73-5.71.87-1.88.15-3.03.12-3.44-.07,0-.39.21-.7.63-.94.42-.24.78-.36,1.1-.36,2.29-.77,2.66-2.56,1.1-5.37-.84-1.64-2.19-2.56-4.07-2.76-1.88-.19-3.86.1-5.95.87-2.3.77-4.67,2.44-7.12,5-2.45,2.56-4.72,5.63-6.81,9.21-2.09,3.58-3.86,7.3-5.32,11.17-1.46,3.87-2.35,7.49-2.66,10.88-.11.87.08,1.96.55,3.26.47,1.31,1.25,2.54,2.35,3.7,1.1,1.16,2.48,2.13,4.15,2.9,1.15.97,2.01,1.52,2.58,1.67.57.15,1.96.02,4.15-.36,2.82-.29,5.71-1.18,8.69-2.68,2.97-1.5,5.79-3.34,8.45-5.51s4.93-4.52,6.81-7.03c1.88-2.51,3.18-4.98,3.91-7.4.73-2.42.68-4.54-.16-6.38-.31-1.06-.24-1.76.23-2.1.47-.34,1.7-1.09,3.68-2.25,2.09-1.35,3.57-2.42,4.46-3.19.89-.77.96-1.21.23-1.31ZM87.87,72.49c-1.15,1.79-2.77,3.75-4.85,5.87-1.88,2.23-3.39,3.89-4.54,5-1.15,1.11-2.03,1.84-2.66,2.18-.63.34-1.15.51-1.56.51-.42.1-.97.41-1.64.94-.68.53-1.23.99-1.64,1.38-.63.29-1.46.65-2.5,1.09-1.04.44-1.78.65-2.19.65-1.04-.1-1.88-.39-2.5-.87-.63-.48-.89-1.45-.78-2.9.21-1.84.94-4.33,2.19-7.47,1.25-3.14,2.79-6.24,4.62-9.28,1.82-3.05,3.57-5.34,5.24-6.89l2.66-2.47,2.5,2.9c1.15.87,2.16,1.57,3.05,2.1.89.53,1.85.8,2.9.8.73.39,1.33.63,1.8.73.47.1.76.34.86.73.52,1.55.21,3.22-.94,5Z" />
+                                    <path class="cls-1"
+                                        d="M203.37,52.88c-2.08-1.21-4.64-1.74-7.69-1.6s-6.55,1.14-10.52,2.97c-.19.1-.1-.12.29-.65.39-.53.82-1.33,1.31-2.39.48-1.06.73-2.32.73-3.77.39-2.13.41-3.63.07-4.5-.34-.87-.9-1.93-1.67-3.19-1.06-.77-1.96-1.35-2.68-1.74-.73-.39-1.57-.1-2.54.87-.68.77-1.11,1.28-1.31,1.52-.19.24-.29.56-.29.94,0,.97-.22,2.44-.65,4.42-.44,1.98-1.23,4.33-2.39,7.03-1.16,2.9-2.47,6.43-3.92,10.59-1.45,4.16-2.93,8.41-4.42,12.76-1.5,4.35-2.76,8.25-3.77,11.68-1.02,3.43-1.67,5.83-1.96,7.18,0,.39-.17,1.16-.51,2.32-.34,1.16-.51,2.13-.51,2.9-1.16.97-1.74,2.03-1.74,3.19,0,1.06-.15,2.27-.44,3.63-.29,1.35-.68,2.42-1.16,3.19,0,.48-.12,1.28-.36,2.39-.24,1.11-.36,1.86-.36,2.25,0,.77-.15,1.96-.44,3.55-.29,1.6-.68,3.21-1.16,4.86-.48,2.51-.7,4.25-.65,5.22.05.97.27,1.69.65,2.18.48.87,1.02,1.28,1.6,1.23.58-.05,1.06-.07,1.45-.07,1.16,0,2.18-.68,3.05-2.03.87-1.35,1.35-3.24,1.45-5.66,0-.48.05-1.28.15-2.39.09-1.11.34-1.72.73-1.81.39,0,.75-.56,1.09-1.67.34-1.11.51-2.25.51-3.41.39-.77.73-1.94,1.02-3.48.29-1.55.44-2.71.44-3.48.48-.77.77-2.27.87-4.5-.39-.48-.39-1.02,0-1.6.48,0,1.02-.73,1.6-2.18.58-1.45,1.09-2.97,1.52-4.57.44-1.6.65-2.68.65-3.26,0-.29.12-.63.36-1.02.24-.39.46-.68.65-.87.87.77,2.32,1.16,4.35,1.16,1.55,0,3.34-.27,5.37-.8,2.03-.53,3.82-1.11,5.37-1.74,1.55-.63,2.32-1.04,2.32-1.23,0-.48.24-.77.73-.87.77.29,1.98.07,3.63-.65,1.64-.73,3.31-1.69,5-2.9,1.69-1.21,2.92-2.3,3.7-3.26.39-.77.77-1.47,1.16-2.1.39-.63.77-.94,1.16-.94.58-.58,1.23-1.52,1.96-2.83.73-1.31,1.33-2.76,1.81-4.35.48-1.6.73-2.97.73-4.13,0-2.8-.53-5.27-1.6-7.4-1.07-2.13-2.64-3.79-4.71-5ZM199.74,69.12c-1.4,2.85-3.36,5.39-5.87,7.61-1.26,1.07-3.17,2.1-5.73,3.12-2.56,1.02-5.05,1.86-7.47,2.54-2.42.68-4.01,1.02-4.79,1.02-.68,0-.97-.63-.87-1.89.1-1.26.46-2.8,1.09-4.64.63-1.84,1.43-3.67,2.39-5.51.97-1.84,2.03-3.38,3.19-4.64,2.13-2.03,4.4-3.72,6.82-5.08,2.42-1.35,4.64-2.15,6.67-2.39,2.03-.24,3.43.31,4.21,1.67,1.64,2.61,1.76,5.34.36,8.19Z" />
+                                    <path class="cls-1"
+                                        d="M155.56,53.29c-3.75-1.14-7.49-2.29-11.24-3.43-2.86-.87-6.41-2.57-8.94-.1-2.04,1.99-1.95,5.61-1.96,8.25-.01,3.77.61,7.51,1.71,11.11,1.3,4.3,8.06,2.47,6.75-1.86-.55-1.81-.98-3.63-1.23-5.49,2.73,3.27,5,7.05,5.49,11.31.93,8.07-5.39,15.44-13.26,16.44-6.49.82-15.16-2.74-16.78-9.71-1.66-7.13,4.29-13.64,9.13-17.95,3.37-3-1.6-7.94-4.95-4.95-7.08,6.31-13.84,15.85-10.62,25.83,2.99,9.24,13.7,14.6,22.97,13.84,10.38-.85,19.16-8.94,20.42-19.41.87-7.23-2.24-13.83-6.63-19.35,2.43.74,4.86,1.48,7.29,2.23,4.32,1.32,6.16-5.44,1.86-6.75Z" />
+                                </g>
+                            </g>
+                        </svg>
+                        <h1 class="slogan">Feel it looping</h1>
+                    </span>
+
+                    <span class="bajar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30"
+                            height="30" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M6 9l6 6l6 -6" />
+                        </svg>
+                    </span>
+                </div>
+
+                <section>
+                    <div class='air air1'></div>
+                    <div class='air air2'></div>
+                    <div class='air air3'></div>
+                    <div class='air air4'></div>
+                </section>
+            </section>
+
+            <section id="avance">
+                <div class="avance-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                        height="32" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon custom-animate fade-up"
+                        data-animate="fade-up">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" />
+                        <path d="M19 22v.01" />
+                        <path
+                            d="M19 19a2.003 2.003 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
+                    </svg>
+                    <span class="custom-animate zoom-in" data-animate="zoom-in">
+                        <h2 class="tituloSeccion">Descripción del proyecto</h2>
+                    </span>
+                    <p class="descripcion custom-animate fade-up"
+                        data-animate="zoom-in">
+                        LoopState es una experiencia digital que explora la
+                        conexión entre sonido, imagen y emoción a través de
+                        piezas audiovisuales diseñadas como estados visuales en
+                        constante repetición. Cada “loop” representa una
+                        interpretación gráfica de una canción o atmósfera,
+                        creando una narrativa visual que evoluciona entre lo
+                        abstracto y lo emocional.
+
+                        El proyecto está concebido como una plataforma
+                        interactiva que posteriormente integrará elementos de
+                        realidad aumentada para transformar estos visuales en
+                        experiencias inmersivas.
+                    </p>
+
+                </div>
+            </section>
+            <section id="objetivo">
+                <div class="objetivo-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                        height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-article"><path
+                            stroke="none" d="M0 0h24v24H0z" fill="none" /><path
+                            d="M3 6a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -12" /><path
+                            d="M7 8h10" /><path d="M7 12h10" /><path
+                            d="M7 16h10" /></svg>
+                    <span class="custom-animate zoom-in" data-animate="zoom-in">
+                        <h2 class="tituloSeccion">Objetivo del proyecto</h2>
+                    </span>
+                    <p class="descripcion custom-animate fade-up"
+                        data-animate="zoom-in">
+                        Desarrollar una plataforma web que funcione como base
+                        para una experiencia audiovisual interactiva, donde se
+                        integren recursos gráficos, animaciones y, en etapas
+                        posteriores, elementos de realidad aumentada que
+                        permitan al usuario interactuar con los visuales de
+                        forma inmersiva desde dispositivos móviles.
+                    </p>
+
+                </div>
+            </section>
+
+            <section id="proyecto">
+                <div class="proyecto-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                        height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path
+                            stroke="none" d="M0 0h24v24H0z" fill="none" /><path
+                            d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path
+                            d="M14 4l-4 16" /></svg>
+                    <span class="custom-animate zoom-in" data-animate="zoom-in">
+                        <h2 class="tituloSeccion">Contenido incrustado</h2>
+                    </span>
+                    <div class="spatialSite">
+                        <h3>Spatial Enviroment</h3>                            
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="galeria">
+                <div class="galeria-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                        height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-library-photo"><path
+                            stroke="none" d="M0 0h24v24H0z" fill="none" /><path
+                            d="M7 5.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" /><path
+                            d="M4.012 7.26a2.005 2.005 0 0 0 -1.012 1.737v10c0 1.1 .9 2 2 2h10c.75 0 1.158 -.385 1.5 -1" /><path
+                            d="M17 7h.01" /><path
+                            d="M7 13l3.644 -3.644a1.21 1.21 0 0 1 1.712 0l3.644 3.644" /><path
+                            d="M15 12l1.644 -1.644a1.21 1.21 0 0 1 1.712 0l2.644 2.644" /></svg>
+                    <span class="custom-animate zoom-in" data-animate="zoom-in">
+                        <h2 class="tituloSeccion">Galería</h2>
+                    </span>
+                    <div class="embedContent">
+                        <h3>Próximamente...</h3>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="yo">
+                <div class="yo-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                        height="32" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon custom-animate fade-up"
+                        data-animate="fade-up">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    </svg>
+                    <span class="custom-animate zoom-in" data-animate="zoom-in">
+                        <h2 class="tituloSeccion">Autor</h2>
+                    </span>
+                    <span class="custom-animate fade-up" data-animate="fade-up">
+                        <div class="javierInfo">
+                            <img src="images/javierPhoto.webp"
+                                alt="Foto de perfil de Javier" width="150px"
+                                height="150px" />
+                            <h3>Javier Rivera</h3>
+                            <span>@javierIsaii</span>
+                            <p>Creador visual enfocado en animación y
+                                experiencias digitales. Explora la relación
+                                entre diseño, sonido y movimiento para dar vida
+                                a ideas a través de lo visual.
+                            </p>
+                        </div>
+                    </span>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+        <section class="footerInfo">
+            <div class="social">
+                <h2 class="opcionFooter">About me</h2>
+                <div class="redes">
+                    <a href="https://instagram.com/javierIsaii" target="_blank" class="socialLink ig"
+                        aria-label="Perfil de Instagram" title="Instagram">
+                        <svg width="64" height="64" viewBox="0 0 20 20" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(-340.000000, -7439.000000)">
+                                <g transform="translate(56.000000, 160.000000)">
+                                    <path fill="currentColor"
+                                        d="M289.869652,7279.12273 C288.241769,7279.19618 286.830805,7279.5942 285.691486,7280.72871 C284.548187,7281.86918 284.155147,7283.28558 284.081514,7284.89653 C284.035742,7285.90201 283.768077,7293.49818 284.544207,7295.49028 C285.067597,7296.83422 286.098457,7297.86749 287.454694,7298.39256 C288.087538,7298.63872 288.809936,7298.80547 289.869652,7298.85411 C298.730467,7299.25511 302.015089,7299.03674 303.400182,7295.49028 C303.645956,7294.859 303.815113,7294.1374 303.86188,7293.08031 C304.26686,7284.19677 303.796207,7282.27117 302.251908,7280.72871 C301.027016,7279.50685 299.5862,7278.67508 289.869652,7279.12273 M289.951245,7297.06748 C288.981083,7297.0238 288.454707,7296.86201 288.103459,7296.72603 C287.219865,7296.3826 286.556174,7295.72155 286.214876,7294.84312 C285.623823,7293.32944 285.819846,7286.14023 285.872583,7284.97693 C285.924325,7283.83745 286.155174,7282.79624 286.959165,7281.99226 C287.954203,7280.99968 289.239792,7280.51332 297.993144,7280.90837 C299.135448,7280.95998 300.179243,7281.19026 300.985224,7281.99226 C301.980262,7282.98483 302.473801,7284.28014 302.071806,7292.99991 C302.028024,7293.96767 301.865833,7294.49274 301.729513,7294.84312 C300.829003,7297.15085 298.757333,7297.47145 289.951245,7297.06748 M298.089663,7283.68956 C298.089663,7284.34665 298.623998,7284.88065 299.283709,7284.88065 C299.943419,7284.88065 300.47875,7284.34665 300.47875,7283.68956 C300.47875,7283.03248 299.943419,7282.49847 299.283709,7282.49847 C298.623998,7282.49847 298.089663,7283.03248 298.089663,7283.68956 M288.862673,7288.98792 C288.862673,7291.80286 291.150266,7294.08479 293.972194,7294.08479 C296.794123,7294.08479 299.081716,7291.80286 299.081716,7288.98792 C299.081716,7286.17298 296.794123,7283.89205 293.972194,7283.89205 C291.150266,7283.89205 288.862673,7286.17298 288.862673,7288.98792 M290.655732,7288.98792 C290.655732,7287.16159 292.140329,7285.67967 293.972194,7285.67967 C295.80406,7285.67967 297.288657,7287.16159 297.288657,7288.98792 C297.288657,7290.81525 295.80406,7292.29716 293.972194,7292.29716 C292.140329,7292.29716 290.655732,7290.81525 290.655732,7288.98792">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://m.youtube.com/@javierIsaii" target="_blank" class="socialLink yt"
+                        aria-label="Canal de YouTube" title="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="64" width="64" viewBox="-7 0 250 165">
+                            <path fill="currentColor"
+                                d="M229.763 25.817c-2.699-10.162-10.65-18.165-20.748-20.881C190.716 0 117.333 0 117.333 0S43.951 0 25.651 4.936C15.553 7.652 7.6 15.655 4.903 25.817 0 44.236 0 82.667 0 82.667s0 38.429 4.903 56.85C7.6 149.68 15.553 157.681 25.65 160.4c18.3 4.934 91.682 4.934 91.682 4.934s73.383 0 91.682-4.934c10.098-2.718 18.049-10.72 20.748-20.882 4.904-18.421 4.904-56.85 4.904-56.85s0-38.431-4.904-56.85" />
+                            <path d="M93.333 117.559l61.333-34.89-61.333-34.894z" fill="#101010" />
+                        </svg>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://tiktok.com/@javieranimations" target="_blank" class="socialLink tt"
+                        aria-label="Perfil de TikTok" title="TikTok">
+                        <svg viewBox="4 4 42 42" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+                            <path fill="currentColor"
+                                d="M41 4H9C6.243 4 4 6.243 4 9v32c0 2.757 2.243 5 5 5h32c2.757 0 5-2.243 5-5V9c0-2.757-2.243-5-5-5m-3.994 18.323a7.482 7.482 0 0 1-.69.035 7.492 7.492 0 0 1-6.269-3.388v11.537a8.527 8.527 0 1 1-8.527-8.527c.178 0 .352.016.527.027v4.202c-.175-.021-.347-.053-.527-.053a4.351 4.351 0 1 0 0 8.704c2.404 0 4.527-1.894 4.527-4.298l.042-19.594h4.02a7.488 7.488 0 0 0 6.901 6.685v4.67" />
+                        </svg>
+                        <span>TikTok</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="about">
+            <h4>JavierIsaii · 2026</h4>
+        </div>
+    </footer>
+
+
+    <div class="subir">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 15l6 -6l6 6" />
+        </svg>
+    </div>
+
+
+        <script>
+    document.querySelector(".bajar").addEventListener("click", function () {
+        const seccionDestino = document.getElementById("avance");
+        const offset = 30; // Altura de la barra de menú
+        const rect = seccionDestino.getBoundingClientRect();
+        const centroVertical = rect.top + window.scrollY - offset;
+
+        window.scrollTo({
+            top: centroVertical,
+            behavior: "smooth",
+        });
+    });
+
+    const scrollToTopBtn = document.querySelector(".subir");
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 500) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+    });
+
+    scrollToTopBtn.addEventListener("click", () =>
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })
+    );
+</script>
+    </body>
+    
+</html>
